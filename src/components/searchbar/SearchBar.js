@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import style from './SearchBar.module.css';
+import style from './SearchBar.module.css';
 
 function SearchBar() {
   const [value, setValue] = useState('');
