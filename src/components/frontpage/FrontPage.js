@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import style from './FrontPage.module.css';
-import data from '../../api/data';
 import Card from '../../UI/Card';
+import { myContext } from '../../store/shop-contxt';
 
 function FrontPage() {
-  const [shopping, setShopping] = useState([]);
-  useEffect(() => {
-    const datafetch = async () => {
-      const response = await data.get('?limit=24');
-      setShopping(response.data);
-    };
-    datafetch();
-  }, []);
-
+  const { shopping, id, setId } = useContext(myContext);
   const renderedList = shopping.map((product) => {
     return (
       <Card className={style.itemHome} key={product.id} id={product.id}>
@@ -21,7 +13,12 @@ function FrontPage() {
           alt={product.title}
           id={`product${product.id}`}
         />
-        <div className={style.description}>
+        <div
+          className={style.description}
+          onClick={() => {
+            setId(product.id);
+          }}
+        >
           <h4>{product.title}</h4>
           <span>${product.price} </span>
           <a href="#reviews">
@@ -32,7 +29,9 @@ function FrontPage() {
     );
   });
 
-  return <main className={style.itemList}>{renderedList}</main>;
+  return id === null ? (
+    <main className={style.itemList}>{renderedList}</main>
+  ) : null;
 }
 
 export default FrontPage;

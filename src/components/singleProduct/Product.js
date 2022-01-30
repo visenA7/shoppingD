@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { myContext } from '../../store/shop-contxt';
+import style from './product.module.css';
+import Card from '../../UI/Card';
 
 function Product() {
-  return (
-    <div>
-      <img />
+  const { shopping, id } = useContext(myContext);
+
+  const product = shopping.find((item) => {
+    return id === item.id;
+  });
+  // console.log(product);
+
+  return product ? (
+    <div className={style.singleProduct}>
+      <span className={style.ctg}>{product.category}</span>
+      <img src={product.image} alt="Product" />
+      <Card className={style.description}>
+        <h4>{product.title}</h4>
+        <span>${product.price} </span>
+        <a href="#reviews">
+          {product.rating.rate} ({product.rating.count})
+        </a>
+        <p>{product.description}</p>
+      </Card>
     </div>
-  );
+  ) : null;
 }
 
 export default Product;
