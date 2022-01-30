@@ -13,15 +13,21 @@ function Product() {
 
   return product ? (
     <div className={style.singleProduct}>
-      <span className={style.ctg}>{product.category}</span>
-      <img src={product.image} alt="Product" />
-      <Card className={style.description}>
+      <Card className={style.leftC}>
+        <span className={style.ctg}>{product.category}</span>
+        <img src={product.image} alt="Product" />
+        <div>
+          <button>WishList</button>
+          <button>Buy Now</button>
+        </div>
+      </Card>
+      <Card className={style.rightC}>
         <h4>{product.title}</h4>
         <span>${product.price} </span>
         <a href="#reviews">
-          {product.rating.rate} ({product.rating.count})
+          rating: {product.rating.rate} ({product.rating.count})
         </a>
-        <p>{product.description}</p>
+        <p>Description: {product.description}</p>
       </Card>
     </div>
   ) : null;

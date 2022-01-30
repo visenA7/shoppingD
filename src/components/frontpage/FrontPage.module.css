@@ -20,6 +20,9 @@
 
   /* margin: 0px 120px 0px 0px; */
 }
+.description:hover {
+  cursor: pointer;
+}
 .description h4 {
   margin: 10px 0px;
   white-space: nowrap;
