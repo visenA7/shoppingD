@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import { myContext } from '../../store/shop-contxt';
+import { useParams } from 'react-router-dom';
 import style from './product.module.css';
 import Card from '../../UI/Card';
 
 function Product() {
-  const { shopping, id } = useContext(myContext);
+  const { shopping } = useContext(myContext);
+  const id = useParams().productId;
 
   const product = shopping.find((item) => {
-    return id === item.id;
+    return id.toString() === item.id.toString();
   });
   // console.log(product);
 

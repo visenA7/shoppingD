@@ -31,7 +31,7 @@
   text-overflow: ellipsis;
 }
 
-.description a {
+.description i {
   background-color: #2cda9d;
   border-radius: 5px;
   padding: 2px 3px;

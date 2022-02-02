@@ -1,0 +1,66 @@
+.itemList * {
+  font-size: large;
+  color: black;
+  /* margin: 5px; */
+}
+.container * {
+  color: black;
+}
+.container {
+  display: inline-block;
+  margin: 10px;
+  width: 500px;
+}
+
+.itemList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-direction: column; */
+  background-color: #ede7b1;
+}
+
+.itemList img {
+  height: 50px;
+  width: 70px;
+  margin: 2px 5px 2px 30px;
+}
+
+.itemList p {
+  width: 550px;
+  word-wrap: break-word;
+}
+.butn button {
+  background-color: chocolate;
+  color: aliceblue;
+  padding: 3px 7px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 2px 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  margin: 5px 5px;
+}
+
+.form .control input {
+  border: none;
+  width: fit-content;
+  /* margin: inherit 0px; */
+}
+
+.form button {
+  background-color: #81f499;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0px 75px 15px 20px;
+  padding: 7px 0px;
+}
+
+.form button:hover {
+  cursor: pointer;
+}
