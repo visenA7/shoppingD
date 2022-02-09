@@ -8,7 +8,7 @@ const ShoppingContext = (props) => {
   const [id, setId] = useState(null);
   useEffect(() => {
     const datafetch = async () => {
-      const response = await data.get('/');
+      const response = await data.get('/products.json');
       setShopping(response.data);
     };
     datafetch();
