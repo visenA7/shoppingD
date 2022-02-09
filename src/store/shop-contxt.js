@@ -8,7 +8,7 @@ const ShoppingContext = (props) => {
   const [id, setId] = useState(null);
   useEffect(() => {
     const datafetch = async () => {
-      const response = await data.get('?limit=24');
+      const response = await data.get('/');
       setShopping(response.data);
     };
     datafetch();
